@@ -5,7 +5,7 @@
 [![Vulnerability Remediation](https://img.shields.io/badge/Remediation%20Status-100%25%20Verified-success.svg)](reports/final_technical_report.md)
 [![License](https://img.shields.io/badge/License-MIT%20Academic-lightgrey.svg)](LICENSE)
 
-**Academic Course / Portfolio Code:** `2311CS040137-EH`  
+**Academic Course / Portfolio Code:** `2311CS040082-EH`  
 **Lead Assessor / Developer:** Student Security Engineer  
 **Classification:** Academic Laboratory Project & Vulnerability Assessment Platform  
 
@@ -71,7 +71,7 @@ The **Web Application Security & Ethical Hacking Assessment Platform** is a unif
 ## 📂 3. Repository Structure
 
 ```text
-2311CS040137-EH/
+2311CS040082-EH/
 │
 ├── README.md                           # Master Project Overview & Documentation
 ├── LICENSE                             # Educational / MIT License

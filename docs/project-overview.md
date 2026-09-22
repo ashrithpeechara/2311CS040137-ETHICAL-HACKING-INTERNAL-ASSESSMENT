@@ -1,6 +1,6 @@
 # Project Overview: Web Application Security & Ethical Hacking Assessment Platform
 
-**Academic Identifier:** `2311CS040137-EH`  
+**Academic Identifier:** `2311CS040082-EH`  
 **Classification:** Academic Cybersecurity Lab Project & Vulnerability Assessment Suite  
 **Scope:** Controlled, Isolated Localhost Environment  
 

@@ -1,7 +1,7 @@
 # Technical Security Report: SQL Injection Detection & Prevention
 
 **Module:** Assignment 1 (`ASSIGNMENT-01-SQLI`)  
-**Assessor:** Lead Security Engineer (`2311CS040137-EH`)  
+**Assessor:** Lead Security Engineer (`2311CS040082-EH`)  
 **Target Environment:** Localhost Isolated Lab (`security_lab.db`)  
 **Classification:** Academic Cybersecurity Vulnerability Assessment  
 

@@ -5,7 +5,7 @@
 
 Write-Host "==============================================================================" -ForegroundColor Cyan
 Write-Host "  Cybersecurity Assessment Platform - Automated Environment Setup" -ForegroundColor Green
-Write-Host "  Project Identifier: 2311CS040137-EH" -ForegroundColor White
+Write-Host "  Project Identifier: 2311CS040082-EH" -ForegroundColor White
 Write-Host "==============================================================================" -ForegroundColor Cyan
 
 # 1. Check Python installation

@@ -39,7 +39,7 @@ def main():
     print("""
     ============================================================================
       WEB APPLICATION SECURITY & ETHICAL HACKING ASSESSMENT PLATFORM
-      Unified Assessment Test Suite (2311CS040137-EH)
+      Unified Assessment Test Suite (2311CS040082-EH)
     ============================================================================
     """)
 

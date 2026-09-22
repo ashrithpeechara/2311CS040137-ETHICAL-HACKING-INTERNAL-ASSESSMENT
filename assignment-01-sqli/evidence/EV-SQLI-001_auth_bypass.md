@@ -5,7 +5,7 @@
 **Vulnerability Ref:** CWE-89 (SQL Injection) / OWASP A03:2021  
 **Timestamp:** `2026-09-22T14:10:00Z`  
 **Target:** `http://127.0.0.1:5001/api/vulnerable/login` (Authentication Service)  
-**Assessor:** Lead Penetration Tester (`2311CS040137-EH`)  
+**Assessor:** Lead Penetration Tester (`2311CS040082-EH`)  
 **SHA-256 Hash:** `a4b2c1d9f8e76a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b`  
 
 ---

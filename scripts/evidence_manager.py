@@ -27,7 +27,7 @@ def index_all_evidence() -> dict:
     print("[*] Initiating Evidence Discovery & Cryptographic Verification...")
     evidence_index = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "assessor_id": "2311CS040137-EH",
+        "assessor_id": "2311CS040082-EH",
         "evidence_count": 0,
         "evidence_items": []
     }

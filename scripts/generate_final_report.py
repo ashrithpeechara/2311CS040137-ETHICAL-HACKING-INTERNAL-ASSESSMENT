@@ -31,7 +31,7 @@ def generate_reports():
     tech_report_md = f"""# Comprehensive Security Assessment & Ethical Hacking Report
 
 **Project Title:** Web Application Security & Ethical Hacking Assessment Platform  
-**Academic Identifier:** `2311CS040137-EH`  
+**Academic Identifier:** `2311CS040082-EH`  
 **Date of Assessment:** {datetime.now(timezone.utc).strftime('%Y-%m-%d')}  
 **Assessor:** Lead Security Engineer & Penetration Tester  
 **Classification:** Confidential / Educational Security Audit  
@@ -242,7 +242,7 @@ The Web Application Security & Ethical Hacking Assessment Platform successfully 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Assessment Final Report - 2311CS040137-EH</title>
+    <title>Security Assessment Final Report - 2311CS040082-EH</title>
     <style>
         :root {{
             --bg-color: #0d1117;
@@ -294,7 +294,7 @@ The Web Application Security & Ethical Hacking Assessment Platform successfully 
     <div class="container">
         <h1>Web Application Security & Ethical Hacking Assessment</h1>
         <div class="meta-box">
-            <p><strong>Course/Project ID:</strong> 2311CS040137-EH | <strong>Date:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d')} | <strong>Status:</strong> <span class="badge badge-pass">100% REMEDIATED</span></p>
+            <p><strong>Course/Project ID:</strong> 2311CS040082-EH | <strong>Date:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d')} | <strong>Status:</strong> <span class="badge badge-pass">100% REMEDIATED</span></p>
             <p><strong>Target Environment:</strong> Localized Isolated Sandbox (127.0.0.1:5000 / 5001)</p>
         </div>
 
