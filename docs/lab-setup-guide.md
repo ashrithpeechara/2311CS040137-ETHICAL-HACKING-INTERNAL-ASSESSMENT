@@ -16,8 +16,8 @@ This guide describes how to configure and run the isolated security assessment e
 
 ### Step 1: Clone and Enter Repository
 ```bash
-git clone https://github.com/your-username/2311CS040082-EH.git
-cd 2311CS040082-EH
+git clone https://github.com/your-username/2311CS040137-EH.git
+cd 2311CS040137-EH
 ```
 
 ### Step 2: Create and Activate Virtual Environment

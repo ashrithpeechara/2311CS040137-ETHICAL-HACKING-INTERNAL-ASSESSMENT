@@ -1,7 +1,7 @@
 # Comprehensive Security Assessment & Ethical Hacking Report
 
 **Project Title:** Web Application Security & Ethical Hacking Assessment Platform  
-**Academic Identifier:** `2311CS040082-EH`  
+**Academic Identifier:** `2311CS040137-EH`  
 **Date of Assessment:** 2026-09-22  
 **Assessor:** Lead Security Engineer & Penetration Tester  
 **Classification:** Confidential / Educational Security Audit  
@@ -120,7 +120,7 @@ Assignment 2 established the full-lifecycle assessment across 7 phases:
 
 | Evidence ID | Target File | Module | SHA-256 Checksum |
 | :--- | :--- | :--- | :--- |
-| `EV-SQLI-001` | [EV-SQLI-001_auth_bypass.md](file:///C:/Users/ashri/OneDrive/Desktop/2311CS040137-EH/assignment-01-sqli/evidence/EV-SQLI-001_auth_bypass.md) | Assignment-01-SQLi | `476c56d3adb950acbc48499c9c88ae92189d0246fdbe54797f4fa11c52e57fa6` |
+| `EV-SQLI-001` | [EV-SQLI-001_auth_bypass.md](file:///C:/Users/ashri/OneDrive/Desktop/2311CS040137-EH/assignment-01-sqli/evidence/EV-SQLI-001_auth_bypass.md) | Assignment-01-SQLi | `a762251afc335c0af70daafd8a78a75287990b4eb001dea66b9d8244355df5a0` |
 | `EV-SQLI-002` | [EV-SQLI-002_union_extract.md](file:///C:/Users/ashri/OneDrive/Desktop/2311CS040137-EH/assignment-01-sqli/evidence/EV-SQLI-002_union_extract.md) | Assignment-01-SQLi | `2cc64a5d0f04e1f65f63f0f0565de0500dea95f2a982a8929f6c1d44013c520c` |
 | `EV-SQLI-003` | [EV-SQLI-003_blind_boolean.md](file:///C:/Users/ashri/OneDrive/Desktop/2311CS040137-EH/assignment-01-sqli/evidence/EV-SQLI-003_blind_boolean.md) | Assignment-01-SQLi | `c5a349d3e0b74b0507e3d02c2d89aa5add87b19dc5a5e1c915d53c5b1f6d6144` |
 | `EV-ENUM-001` | [EV-ENUM-001_dir_fuzzing.md](file:///C:/Users/ashri/OneDrive/Desktop/2311CS040137-EH/assignment-02-ethical-hacking/evidence/EV-ENUM-001_dir_fuzzing.md) | Assignment-02-EthicalHacking | `6444ddb362a20ed8af9036a6ab8642b045a97dc434fa0306ec6861eb3bf297df` |

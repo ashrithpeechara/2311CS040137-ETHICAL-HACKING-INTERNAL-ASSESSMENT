@@ -50,7 +50,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setFillColor(colors.HexColor("#64748b"))
         
         # Header
-        self.drawString(54, letter[1] - 36, "Web Application Security & Ethical Hacking Platform | Course Code: 2311CS040082-EH")
+        self.drawString(54, letter[1] - 36, "Web Application Security & Ethical Hacking Platform | Course Code: 2311CS040137-EH")
         self.setStrokeColor(colors.HexColor("#cbd5e1"))
         self.setLineWidth(0.5)
         self.line(54, letter[1] - 42, letter[0] - 54, letter[1] - 42)
@@ -193,7 +193,7 @@ def build_assignment_01_pdf():
 
     # Title & Metadata
     story.append(Paragraph("ASSIGNMENT 1: TECHNICAL ASSESSMENT REPORT", styles["title"]))
-    story.append(Paragraph("<b>Module:</b> SQL Injection Detection, Exploitation & Prepared Statement Remediation<br/><b>Course Identifier:</b> 2311CS040082-EH &nbsp;|&nbsp; <b>Date:</b> " + datetime.now(timezone.utc).strftime('%B %d, %Y'), styles["subtitle"]))
+    story.append(Paragraph("<b>Module:</b> SQL Injection Detection, Exploitation & Prepared Statement Remediation<br/><b>Course Identifier:</b> 2311CS040137-EH &nbsp;|&nbsp; <b>Date:</b> " + datetime.now(timezone.utc).strftime('%B %d, %Y'), styles["subtitle"]))
     story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#0284c7"), spaceAfter=10))
 
     # Executive Summary
@@ -311,7 +311,7 @@ def build_assignment_02_pdf():
 
     # Title & Metadata
     story.append(Paragraph("ASSIGNMENT 2: INTEGRATED ETHICAL HACKING REPORT", styles["title"]))
-    story.append(Paragraph("<b>Framework:</b> PTES, NIST SP 800-115, OWASP WSTG v4.2 &middot; <b>Course Code:</b> 2311CS040082-EH<br/><b>Engagement Scope:</b> Localized Sandboxed Lab Perimeter &nbsp;|&nbsp; <b>Date:</b> " + datetime.now(timezone.utc).strftime('%B %d, %Y'), styles["subtitle"]))
+    story.append(Paragraph("<b>Framework:</b> PTES, NIST SP 800-115, OWASP WSTG v4.2 &middot; <b>Course Code:</b> 2311CS040137-EH<br/><b>Engagement Scope:</b> Localized Sandboxed Lab Perimeter &nbsp;|&nbsp; <b>Date:</b> " + datetime.now(timezone.utc).strftime('%B %d, %Y'), styles["subtitle"]))
     story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#0284c7"), spaceAfter=10))
 
     # Executive Summary
