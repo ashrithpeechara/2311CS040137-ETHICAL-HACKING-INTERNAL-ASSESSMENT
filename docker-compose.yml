@@ -1,0 +1,16 @@
+services:
+  # Isolated DVWA Lab Target (Optional Containerized Mode)
+  dvwa-target:
+    image: vulnerables/web-dvwa:latest
+    container_name: isolated_dvwa_target
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - PHP_DISPLAY_ERRORS=On
+    networks:
+      - isolated_sec_net
+
+networks:
+  isolated_sec_net:
+    driver: bridge

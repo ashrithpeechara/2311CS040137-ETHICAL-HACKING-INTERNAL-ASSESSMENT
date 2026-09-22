@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecOps Dashboard | Web App Security & Ethical Hacking Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="cyber-header">
+        <div class="header-container">
+            <div class="logo-group">
+                <span class="logo-badge">SECOPS</span>
+                <span class="logo-title">Security Assessment Platform</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Overview</a></li>
+                <li><a href="/sqli">Assignment 1 (SQLi)</a></li>
+                <li><a href="/ethical-hacking">Assignment 2 (Ethical Hacking)</a></li>
+                <li><a href="/evidence">Evidence Vault</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner">
+            <div class="hero-text">
+                <h1>Web Application Security & Ethical Hacking Assessment</h1>
+                <p class="hero-subtitle">Unified Assessment Framework &middot; Course Code: <strong>2311CS040137-EH</strong> &middot; Target: Local Sandbox</p>
+            </div>
+            <div>
+                <button class="btn-cyber" onclick="triggerLiveRetest()" id="retestBtn">Re-Run Automated Verification</button>
+            </div>
+        </section>
+
+        <div id="retestStatusBox" style="margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;"></div>
+
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Total Findings</div>
+                <div class="metric-val">{{ findings|length }}</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">Remediated & Verified</div>
+                <div class="metric-val">{{ remediated_count }} / {{ findings|length }}</div>
+            </div>
+            <div class="metric-card purple">
+                <div class="metric-label">Evidence Artifacts</div>
+                <div class="metric-val">{{ evidence_count }}</div>
+            </div>
+            <div class="metric-card amber">
+                <div class="metric-label">Target Perimeter</div>
+                <div class="metric-val" style="font-size: 1.2rem; margin-top: 6px;">127.0.0.1 (Loopback)</div>
+            </div>
+        </section>
+
+        <section class="cyber-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Master Vulnerability Ledger (VULN-xxx)</h2>
+                <span class="badge badge-pass">100% Retest Verified</span>
+            </div>
+            <table class="cyber-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Vulnerability Title</th>
+                        <th>Module</th>
+                        <th>CWE / OWASP</th>
+                        <th>CVSS v3.1</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in findings %}
+                    <tr>
+                        <td><strong>{{ f.id }}</strong></td>
+                        <td>{{ f.title }}</td>
+                        <td>{{ f.module }}</td>
+                        <td><code>{{ f.cwe }}</code></td>
+                        <td><strong>{{ f.cvss_score }}</strong></td>
+                        <td>
+                            {% if f.severity == 'CRITICAL' %}
+                            <span class="badge badge-critical">CRITICAL</span>
+                            {% elif f.severity == 'HIGH' %}
+                            <span class="badge badge-high">HIGH</span>
+                            {% else %}
+                            <span class="badge badge-medium">{{ f.severity }}</span>
+                            {% endif %}
+                        </td>
+                        <td><span class="badge badge-pass">{{ f.status }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        <p>&copy; 2026 Academic Cybersecurity Assessment Platform &middot; Course ID: 2311CS040137-EH &middot; All Rights Reserved</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-09-22T08:36:58.831828+00:00",
+  "assessor_id": "2311CS040137-EH",
+  "evidence_count": 8,
+  "evidence_items": [
+    {
+      "evidence_id": "EV-SQLI-001",
+      "filename": "EV-SQLI-001_auth_bypass.md",
+      "relative_path": "assignment-01-sqli/evidence/EV-SQLI-001_auth_bypass.md",
+      "module": "Assignment-01-SQLi",
+      "sha256_checksum": "87f7b1b7b4a7a7f762bec1042e2196ad7ceda2cdb1a121b39c996873ef3e107a",
+      "last_modified": "2026-09-22T08:12:20.182097+00:00"
+    },
+    {
+      "evidence_id": "EV-SQLI-002",
+      "filename": "EV-SQLI-002_union_extract.md",
+      "relative_path": "assignment-01-sqli/evidence/EV-SQLI-002_union_extract.md",
+      "module": "Assignment-01-SQLi",
+      "sha256_checksum": "2cc64a5d0f04e1f65f63f0f0565de0500dea95f2a982a8929f6c1d44013c520c",
+      "last_modified": "2026-09-22T08:12:26.707478+00:00"
+    },
+    {
+      "evidence_id": "EV-SQLI-003",
+      "filename": "EV-SQLI-003_blind_boolean.md",
+      "relative_path": "assignment-01-sqli/evidence/EV-SQLI-003_blind_boolean.md",
+      "module": "Assignment-01-SQLi",
+      "sha256_checksum": "c5a349d3e0b74b0507e3d02c2d89aa5add87b19dc5a5e1c915d53c5b1f6d6144",
+      "last_modified": "2026-09-22T08:12:34.910782+00:00"
+    },
+    {
+      "evidence_id": "EV-ENUM-001",
+      "filename": "EV-ENUM-001_dir_fuzzing.md",
+      "relative_path": "assignment-02-ethical-hacking/evidence/EV-ENUM-001_dir_fuzzing.md",
+      "module": "Assignment-02-EthicalHacking",
+      "sha256_checksum": "6444ddb362a20ed8af9036a6ab8642b045a97dc434fa0306ec6861eb3bf297df",
+      "last_modified": "2026-09-22T08:16:08.693218+00:00"
+    },
+    {
+      "evidence_id": "EV-EXPLOIT-001",
+      "filename": "EV-EXPLOIT-001_poc_auth.md",
+      "relative_path": "assignment-02-ethical-hacking/evidence/EV-EXPLOIT-001_poc_auth.md",
+      "module": "Assignment-02-EthicalHacking",
+      "sha256_checksum": "5ff3ef335f5f8084c84ce2858865c94afb60db320083a5461489cd96391a6b6e",
+      "last_modified": "2026-09-22T08:16:16.529270+00:00"
+    },
+    {
+      "evidence_id": "EV-RECON-001",
+      "filename": "EV-RECON-001_whois_dns.md",
+      "relative_path": "assignment-02-ethical-hacking/evidence/EV-RECON-001_whois_dns.md",
+      "module": "Assignment-02-EthicalHacking",
+      "sha256_checksum": "4bc5ebd46d5a7cc9aaa3e8c31fdb526b58f9358924b8ffda373621cd3bd87cfa",
+      "last_modified": "2026-09-22T08:15:56.731906+00:00"
+    },
+    {
+      "evidence_id": "EV-RETEST-001",
+      "filename": "EV-RETEST-001_post_patch.md",
+      "relative_path": "assignment-02-ethical-hacking/evidence/EV-RETEST-001_post_patch.md",
+      "module": "Assignment-02-EthicalHacking",
+      "sha256_checksum": "210f14c4663554eaa4e25d582a35e80d253b50910b766710563482be82172c6b",
+      "last_modified": "2026-09-22T08:16:22.440282+00:00"
+    },
+    {
+      "evidence_id": "EV-SCAN-001",
+      "filename": "EV-SCAN-001_nmap_full.md",
+      "relative_path": "assignment-02-ethical-hacking/evidence/EV-SCAN-001_nmap_full.md",
+      "module": "Assignment-02-EthicalHacking",
+      "sha256_checksum": "44b5ea57dcc7fa46808599ae2e59bdfd84aeab044682f12a11c4436eaadfa66f",
+      "last_modified": "2026-09-22T08:16:03.026506+00:00"
+    }
+  ]
+}

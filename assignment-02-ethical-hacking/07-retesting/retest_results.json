@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-09-22T14:30:00Z",
+  "total_retested": 3,
+  "total_passed": 3,
+  "retest_matrix": [
+    {
+      "finding_id": "VULN-001",
+      "title": "SQL Injection in Authentication",
+      "payload": "admin' OR '1'='1' --",
+      "before_status": "EXPLOITABLE (Gained admin session)",
+      "after_status": "REMEDIATED (Blocked)",
+      "verification": "PASS"
+    },
+    {
+      "finding_id": "VULN-002",
+      "title": "UNION Data Extraction in Search",
+      "payload": "' UNION SELECT 99, account_number, ...",
+      "before_status": "EXPLOITABLE (9 rows leaked)",
+      "after_status": "REMEDIATED (0 rows leaked)",
+      "verification": "PASS"
+    },
+    {
+      "finding_id": "VULN-003",
+      "title": "Numeric SQLi & IDOR Data Dumping",
+      "payload": "1 OR 1=1",
+      "before_status": "EXPLOITABLE (Dumped all users)",
+      "after_status": "REMEDIATED (Type validation blocked)",
+      "verification": "PASS"
+    }
+  ]
+}

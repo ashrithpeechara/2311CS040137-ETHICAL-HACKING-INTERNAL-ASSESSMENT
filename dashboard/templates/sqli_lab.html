@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1: SQLi Lab & Comparator | SecOps Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="cyber-header">
+        <div class="header-container">
+            <div class="logo-group">
+                <span class="logo-badge">SECOPS</span>
+                <span class="logo-title">Security Assessment Platform</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Overview</a></li>
+                <li><a href="/sqli" class="active">Assignment 1 (SQLi)</a></li>
+                <li><a href="/ethical-hacking">Assignment 2 (Ethical Hacking)</a></li>
+                <li><a href="/evidence">Evidence Vault</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner">
+            <div class="hero-text">
+                <h1>Assignment 1: SQL Injection Detection & Prevention</h1>
+                <p class="hero-subtitle">Interactive Query Comparator &middot; Vulnerable String Interpolation vs. Secure Prepared Statements</p>
+            </div>
+        </section>
+
+        <section class="cyber-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Interactive Payload Execution Sandbox</h2>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span style="font-size: 0.9rem; color: var(--text-bright);">Target Engine:</span>
+                    <label style="cursor: pointer;"><input type="radio" name="targetEngine" value="vulnerable" checked> <span style="color: var(--cyber-red); font-weight: bold;">Vulnerable Engine</span></label>
+                    <label style="cursor: pointer;"><input type="radio" name="targetEngine" value="secure"> <span style="color: var(--cyber-green); font-weight: bold;">Secure Engine</span></label>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--text-bright); margin-bottom: 1rem; font-size: 1rem;">1. Authentication Bypass (CWE-89)</h3>
+                    <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+                        <input type="text" id="authPayload" value="admin' OR '1'='1' --" style="flex: 1; background: #090c10; border: 1px solid var(--border-color); color: #fff; padding: 8px 12px; border-radius: 6px; font-family: 'JetBrains Mono';">
+                        <button class="btn-cyber" onclick="executeSqliTest('auth')">Execute</button>
+                    </div>
+
+                    <h3 style="color: var(--text-bright); margin-bottom: 1rem; font-size: 1rem;">2. UNION-Based Data Extraction</h3>
+                    <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+                        <input type="text" id="searchPayload" value="' UNION SELECT 99, account_number, account_type, balance, 1, ssn_last4, 0 FROM accounts --" style="flex: 1; background: #090c10; border: 1px solid var(--border-color); color: #fff; padding: 8px 12px; border-radius: 6px; font-family: 'JetBrains Mono';">
+                        <button class="btn-cyber" onclick="executeSqliTest('search')">Execute</button>
+                    </div>
+
+                    <h3 style="color: var(--text-bright); margin-bottom: 1rem; font-size: 1rem;">3. Numeric / IDOR SQLi</h3>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="userPayload" value="1 OR 1=1" style="flex: 1; background: #090c10; border: 1px solid var(--border-color); color: #fff; padding: 8px 12px; border-radius: 6px; font-family: 'JetBrains Mono';">
+                        <button class="btn-cyber" onclick="executeSqliTest('user')">Execute</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--text-bright); margin-bottom: 1rem; font-size: 1rem;">Raw HTTP / JSON Response Output</h3>
+                    <pre class="code-box" id="sqliOutput" style="min-height: 230px; max-height: 280px;">Select a payload and click Execute to view real-time query behavior...</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="cyber-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Architectural Code Difference</h2>
+            </div>
+            <div class="comparator-grid">
+                <div class="comparator-card vulnerable">
+                    <h3 style="color: var(--cyber-red); margin-bottom: 0.5rem;">Insecure Implementation (Vulnerable)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Unsanitized string interpolation places raw input into SQL interpreter:</p>
+                    <pre class="code-box"><code># VULNERABLE: Direct string formatting
+raw_query = f"SELECT * FROM users WHERE username = '{username}' AND password_hash = '{pw_hash}'"
+cursor.execute(raw_query)</code></pre>
+                </div>
+                <div class="comparator-card secure">
+                    <h3 style="color: var(--cyber-green); margin-bottom: 0.5rem;">Hardened Implementation (Remediated)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Strict regex validation + Parameterized prepared statements:</p>
+                    <pre class="code-box"><code># SECURE: Regex check + Parameter binding
+if not re.match(r"^[a-zA-Z0-9_\-]{3,30}$", username):
+    return {"status": "validation_error"}
+query = "SELECT id, username, email FROM users WHERE username = ? AND password_hash = ?"
+cursor.execute(query, (username, pw_hash))</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        <p>&copy; 2026 Academic Cybersecurity Assessment Platform &middot; Course ID: 2311CS040137-EH &middot; All Rights Reserved</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
